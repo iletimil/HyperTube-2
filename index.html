@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    </head>
+    <body>
+        <nav class="navbar navebar-default">
+            <div class="container">
+                <div class="navebar-header">
+                    <a class="navbar-brand" href="index.html">Hypertube</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="jumbotron">
+                <h3 class="text-center">Search movies</h3>
+                <form name="searchForm" method="GET">
+                    <input type="text" class="form-control" name="searchText" placeholder="Seach movies">
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <div id ="movies" class="row"></div>
+        </div>
+    </body>
+</html>
