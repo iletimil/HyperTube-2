@@ -82,6 +82,7 @@ class   Hypertube {
             callback(movies);
         });
     }
+	
 
     display(callback) {
         var movies;
@@ -89,23 +90,10 @@ class   Hypertube {
             "method": "GET",
             "hostname": "api.themoviedb.org",
             "port": null,
-            "path": encodeURI(this.currentPath + "&language=en-US&api_key=adc880e87d64c28aac3558c838b71d56"),
+            "path": encodeURI(this.currentPath + "&language=en-US&api_key=f013ab8b2052b4a48d90ae4c2a58d615"),
             "headers": {}
           };
     
-        var req = http.request(options, function (res) {
-            var chunks = [];
-          
-            res.on("data", function (chunk) {
-              chunks.push(chunk);
-            });
-            res.on("end", function () {
-              var body = Buffer.concat(chunks);
-              movies = JSON.parse(body.toString());
-              callback(movies);
-            });
-        });
-        req.end();
     }
 }
 
