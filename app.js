@@ -10,14 +10,14 @@ const passport = require('passport');
 const app = express();
 const hypertube = require('./routes/hypertube');
 const image_url = "http://image.tmdb.org/t/p/original/";
-bParser = require('body-parser'),
-    fs = require("fs"),
-    mime = require("mime-types"),
-    flash = require('connect-flash'),
-    cors = require('cors'),
-    pirateBay = require('thepiratebay'),
-    torrentStream = require('torrent-stream'),
-    pump = require('pump'),
+const pirateBay = require('thepiratebay');
+const fs = require("fs");
+const mime = require("mime-types");
+const flash = require('connect-flash');
+const cors = require('cors');
+const torrentStream = require('torrent-stream');
+const pump = require('pump');
+
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
