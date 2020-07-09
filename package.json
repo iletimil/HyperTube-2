@@ -15,6 +15,7 @@
     "chalk": "^4.0.0",
     "cheerio": "^1.0.0-rc.2",
     "connect-flash": "^0.1.1",
+    "download-file": "^0.1.5",
     "express": "^4.17.1",
     "express-generator": "^4.16.0",
     "express-messages": "^1.0.1",
@@ -40,6 +41,8 @@
     "passport-local": "^1.0.0",
     "pug": "^2.0.3",
     "request": "^2.88.0",
+    "rimraf": "^3.0.2",
+    "thepiratebay": "^1.4.7",
     "torrent-stream": "^1.1.0",
     "unirest": "^0.6.0",
     "url": "^0.11.0",
@@ -47,5 +50,14 @@
     "yify": "0.0.2",
     "yify-search": "^1.0.0",
     "yifysubtitles": "^2.1.5"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^8.5.1",
+    "mime-types": "^2.1.27",
+    "parse-torrent-name": "^0.5.4",
+    "peer-wire-swarm": "^0.12.2",
+    "pump": "^3.0.0",
+    "srt-to-vtt": "^1.1.3"
   }
 }

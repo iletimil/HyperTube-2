@@ -10,6 +10,14 @@ const passport = require('passport');
 const app = express();
 const hypertube = require('./routes/hypertube');
 const image_url = "http://image.tmdb.org/t/p/original/";
+bParser = require('body-parser'),
+    fs = require("fs"),
+    mime = require("mime-types"),
+    flash = require('connect-flash'),
+    cors = require('cors'),
+    pirateBay = require('thepiratebay'),
+    torrentStream = require('torrent-stream'),
+    pump = require('pump'),
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
@@ -96,6 +104,8 @@ app.get('/home', function(req, res, next){
         res.redirect('/user/loginForm');
     }
 });
+
+const moviesCtrl = require('./controllers/movies');
 
 app.listen(3000, function(){
     console.log("Server started on port 3000");
