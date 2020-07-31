@@ -9,12 +9,10 @@ const ptn = require('parse-torrent-name');
 const mongoose = require('mongoose');
 const oId = mongoose.Types.ObjectId;
 const jwt = require('jsonwebtoken');
-const config = require('../config/config');
 
 const isUploaded = (id) => {
     return new Promise((res, rej) => {
-        Movies
-            .find({ _id: id }, (err, doc) => {
+        hypertube.getMovie({ _id: id }, (err, doc) => {
                 if (doc && doc[0]) {
                     console.log('Torrent not uploaded');
                     if (doc[0].uploaded === 0) {

@@ -1,11 +1,10 @@
 const ctrlMovies = require('../controllers/movies');
 const torrentStream = require('torrent-stream');
-const torrentSetup = require('../config/torrent');
 const request = require('request');
 const path = require('path');
 const fs = require('fs');
 const pump = require('pump');
-const sleep = require('sleep');
+//const sleep = require('sleep');
 let wireSwarm = require('peer-wire-swarm');
 let download = require('download-file');
 const srt2vtt = require('srt-to-vtt');
@@ -27,11 +26,10 @@ const getStream = (req, res) => {
 const downloadMovie = (magnet, id, req, res) => {
     let movie_title = '';
     // console.log('on download movie');
-    const engine = torrentStream(magnet, torrentSetup);
+    const engine = torrentStream(req.session.magnetURI);
     engine.on('ready', () => {
         // console.log('Engine ready');
         let fileSize = undefined;
-        let filePath = undefined;
 
         engine.files.forEach(function (file) {
             if (
@@ -68,7 +66,6 @@ const downloadMovie = (magnet, id, req, res) => {
                 else
                     end = parseInt(newEnd, 10);
                 let chunksize = end - start + 1;
-                filePath = path.resolve(torrentSetup.path + '/' + file.path);
                 let head = {
                     'Content-Range': 'bytes ' + start + '-' + end + '/' + total,
                     'Accept-Ranges': 'bytes',
